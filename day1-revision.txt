@@ -1,0 +1,227 @@
+Q1) How can you improve performance in hibernate (7 points): sql: where/having: join/subquery
+	a) sql query::
+	b) generate_statistics: session.delete
+	c) cache: first/ second/query cache
+	d) reqt: fetch type
+	Employee| Address: eager (n+1):
+	Employees: Address: lazy
+	Fetch.Join 
+	Batch query
+	e) indexing, db objects: callableStatement (staement/ preparedStatement): pre-compiled/ optimized, sql injection??
+	procedure/function
+	call
+	int address;
+	Bean validations
+	enter address: A10;delete  from employee;
+	select * from employee where address=?
+	ps.setInt(1, address);
+	;delete  from employee;
+	f) Criteria: Projection& restrictions: bulk updates/bulk deletes
+	g) @ReadOnly: prevent dirty checking: reduces no of queries: commit/flush
+	h) @Version: versioning/ optimistic locking
+	i) 
+	 
+Q2) Diff between jdbc & hibernate (8 points)
+a) prevent Dirty read/ phantom reads/ unrepeatable read
+b) Inheritance, Association
+c) jdbc: sql; hibernate:hql&sql: 
+d) generating sql queries: change ur db; dialect & db related propeties
+e) Named queries
+f) c3p0, hikaricp.. 
+g) caching
+h) pagination, versioning, batch, fetch, dirty checking, lazy loading, 
+i) generate_statistics
+j) schema creation/ updation : database migration: flyway, mongoose
+h) primary key auto-generation
+i) cascade..
+
+spring-web
+spring-data-rest | spring-data-jpa
+spring-core: @Conditional
+
+Q3) Spring boot annotations?? (8 annotations)
+a) @SpringBootApplication: @SpringBootConfiguration
+b) @EnableAutoonfiguration
+c) @EntityScan
+d) @ConditionalOnClass
+e) @ConditionalOnMissingBean.....
+...................
+f) @SpringBootTest, @DataJpaTest
+g) @ConfigurationProperties
+h) 
+
+
+
+Q4) How can you specify own server port instead of 8080: 9000
+server.port
+server.context-path
+
+Q5) How can you  read a property file in spring (3 ways)batch
+1)@PropertySource: PropertySourcePlaceholderConfigurer, @Configuration @PropertySource(database.properties) class DbConfig
+	@Autowired Environment env;
+2)  PropertyPlaceholderConfigurer: baseLocation : xml ${}
+3) @ConfigurationProperties
+
+Q6) What are the various ways of configuring beans in spring?
+a) xml
+b) java
+c) Annotation
+
+
+Q7) Describe any 7 design patterns
+a) factory design pattern
+b) singleton
+c) decorator
+d) prototype??
+e) builder
+f) mvc design pattern: spring DI: loose coupling
+g) front controller design patterns: dispatcherServlet: viewResolver, HandlerMapping
+h) service-locator pattern (soap) | spring dependency injection?
+
+Map<String, Object> map;
+
+Reflection: method annotated with @Bean??
+c
+
+
+	@Bean:   object : name {registry}, rmi
+		name: 
+
+i) SOLID design principles: 
+	
+		S: single responsibility principle
+			
+			class Employee{
+			
+			
+			Address address
+				/*void printAddress(Address address){
+						
+						Sysout(address.hno);
+						Sysout(address.city);
+				
+				}*/
+				
+				e.address.print();
+			
+			}
+			
+			class Address{
+			
+				int hno;
+				string city;
+				long pincode;
+			
+				void print(){
+				
+				}
+			
+			}
+		O: open closed principle
+			
+			class should be open for extension but closed for modification
+			
+				
+				class A implements Runnable{
+				
+				}
+				
+				class A extends Thread{
+				
+				}
+		
+		L: liskov substitution
+		
+			class Car{
+			
+				void automaticOn(){
+					Sysout("Automatic functionality car");
+				}
+			
+			}
+			
+			class ManualCar extends Car{
+			
+			void automaticOn(){
+				throw new Exception("Functionality not supported!");
+			}
+			
+			}
+			
+			Parent has a functionality/property which a child does not support, this is not a correct parent
+			
+			
+			class Car{
+			
+				gearUp()
+				applyBreaks();
+			
+			}
+			class Automatic extends Car{
+			
+				void automaticOn(){
+					Sysout("Automatic functionality car");
+				}
+			
+			}
+			
+			Car c= new ManualCar();
+			c.automaticOn();
+			
+		
+		I: Interface segregation: users of the interface: contract
+		
+		class Car implements CarDesign{
+			gearUp()
+				applyBreaks();
+				switchOnAC(){}
+		
+		}
+		
+			
+			interface CarDesign{
+				gearUp()
+				applyBreaks();
+				switchOnAC();
+			}
+			
+			interface AutomaticCarDesign{
+			
+			}
+		
+		
+		D: dependency inversion
+		
+			Inversion of control?? 
+			
+			
+			
+			Servlet: only 1 object is created HttpServlet implements Serializable??
+
+
+
+class Calculator
+{
+
+	void add(){
+	
+	}
+
+}
+Q8) What were the best practices you were following to ensure good code quality in the project (Atleast 7)
+	a) Mantainable?? 
+	b) documented: design document, diagrams
+	c) refactoring: for loops/ stream api.. not too long methods..
+	d) test driven development, behavior driven development, code -> test it
+	e) code coverage??
+	f) sonar??
+	g) jenkins?? CI/ CD/ CD
+	h) peer review
+	i) reusable @NamedQuery, 
+	j) normalization
+	k) performance (less time) & less memory
+	l) 
+	
+Q9) What do you mean by clean code? Describe atleast 20 points what will you check for when doing peer review..
+Like will check using latest api.. Stream api over complex for loops
+Q10) When would you prefer spring transactions over hibernate? How does spring transactions work? Explain the configuration for them in detail
